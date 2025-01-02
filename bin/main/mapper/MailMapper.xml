@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.summation.dailysnap.dao.MailDAO">
+
+    <!-- 데이터 조회 -->
+    <select id="selectMailList" resultType="com.summation.dailysnap.vo.MailVO">
+        SELECT * FROM dailysnap.mails;
+    </select>
+
+    <!-- 데이터 삽입 -->
+    <insert id="insertMail" parameterType="com.summation.dailysnap.vo.MailVO">
+        INSERT INTO dailysnap.mails (email, name) VALUES (#{email}, #{name});
+    </insert>
+
+    <!-- 데이터 수정 -->
+    <update id="updateMail" parameterType="com.summation.dailysnap.vo.MailVO">
+        UPDATE dailysnap.mails
+        SET email = #{email}, name = #{name}
+        WHERE id = #{id};
+    </update>
+
+    <!-- 데이터 삭제 -->
+    <delete id="deleteMailById" parameterType="Long">
+        DELETE FROM dailysnap.mails WHERE id = #{id};
+    </delete>
+
+</mapper>
