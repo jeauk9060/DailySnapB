@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dailysnap.summation.dao.ArticleNewsDAO">
+
+    <!-- 뉴스 삽입 -->
+    <insert id="insertArticle" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO daily.articles
+        (title, source_name, source_icon, link, summary, thumbnail, thumbnail_small, published_date, created_at)
+        VALUES
+        (#{title}, #{sourceName}, #{sourceIcon}, #{link}, #{summary}, #{thumbnail}, #{thumbnailSmall}, #{publishedDate}, #{createdAt})
+    </insert>
+
+    <!-- 중복 확인 -->
+    <select id="checkDuplicateByLink" resultType="int">
+        SELECT COUNT(*) FROM daily.articles WHERE link = #{link}
+    </select>
+
+</mapper>
