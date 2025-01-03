@@ -3,6 +3,7 @@
 	<name>summation</name>
 	<comment>Project summation created by Buildship.</comment>
 	<projects>
+		<project>summation</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
