@@ -11,7 +11,7 @@ spring:
     password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
     hikari:
-      schema: daily
+      connection-init-sql: SET TIME ZONE 'Asia/Seoul';
 
   jpa:
     hibernate:
@@ -23,8 +23,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: km802694@gmail.com
-    password: jjpx jnxj ojwr bjww
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail.smtp.auth: true
       mail.smtp.starttls.enable: true
@@ -34,12 +34,12 @@ server:
 
 mybatis:
   mapper-locations: classpath:mappers/**/*.xml
-  type-aliases-package: com.example.demo.domain
+  type-aliases-package: com.dailysnap.summation.model
 
 logging:
   level:
     org.springframework: INFO
-    com.example: DEBUG
+    com.dailysnap: DEBUG
 
 news:
   api:

@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dailysnap.summation.dao.UserDAO">
+
 	<insert id="insertUser" parameterType="com.dailysnap.summation.model.UserVO">
-		INSERT INTO daily.users (name, email)
-		VALUES (#{name}, #{email});
+		INSERT INTO daily.users (
+			email, 
+			privacy_consent, 
+			consent_date, 
+			subscription_status
+		)
+		VALUES (
+			#{email}, 
+			#{privacyConsent}, 
+			#{consentDate}, 
+			#{subscriptionStatus}
+		);
 	</insert>
 
-	<select id="getUserByEmail"
-		resultType="com.dailysnap.summation.model.UserVO">
-		SELECT * FROM daily.users WHERE email = #{email};
+	<select id="getUserByEmail" resultType="com.dailysnap.summation.model.UserVO">
+		SELECT 
+			user_id, 
+			email, 
+			signup_date, 
+			privacy_consent, 
+			consent_date, 
+			subscription_status, 
+			last_updated
+		FROM 
+			daily.users 
+		WHERE 
+			email = #{email};
 	</select>
 
 </mapper>
