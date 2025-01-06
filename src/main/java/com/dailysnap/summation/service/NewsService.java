@@ -13,6 +13,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.List;
 
 @Service
 public class NewsService {
@@ -130,5 +131,9 @@ public class NewsService {
             e.printStackTrace();
             throw new RuntimeException("날짜 변환 실패: " + dateStr);
         }
+    }
+    
+    public List<ArticleNewsVO> getArticlesByDate(String date) {
+        return articleNewsDAO.findArticlesByDate(LocalDate.parse(date));
     }
 }
