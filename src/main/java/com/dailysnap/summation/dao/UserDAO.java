@@ -10,7 +10,7 @@ public interface UserDAO {
     // 사용자 추가
     void insertUser(UserVO user);
 
-    // 이메일로 사용자 조회
+    // 이메일로 사용자 조회2
     UserVO getUserByEmail(@Param("email") String email);
 
     // 이메일 중복 검사
