@@ -53,5 +53,5 @@ openai:
     key: ${OPENAI_API_KEY}
 
 kakao:
-  client-id: ${KAKAO_CLIENT_ID}
-  redirect-uri: ${KAKAO_REDIRECT_URI}
+  client-id: ${spring.kakao.client-id}
+  redirect-uri: ${spring.kakao.redirect-uri}

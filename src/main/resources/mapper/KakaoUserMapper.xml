@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dailysnap.summation.dao.KakaoUserDAO">
+
+    <!-- 사용자 추가 -->
+    <insert id="insertKakaoUser">
+        INSERT INTO daily.kakao_users
+        (kakao_id, kakao_email, kakao_nickname, talk_message_consent, created_at, user_id)
+        VALUES
+        (#{kakaoId}, #{kakaoEmail}, #{kakaoNickname}, #{talkMessageConsent}, CURRENT_TIMESTAMP, null)
+    </insert>
+
+    <!-- 카카오 ID로 사용자 조회 -->
+    <select id="getKakaoUserById" resultType="com.dailysnap.summation.model.KakaoUserVO">
+        SELECT * FROM daily.kakao_users WHERE kakao_id = #{kakaoId}
+    </select>
+
+    <!-- 이메일 중복 검사 -->
+    <select id="existsByEmail" resultType="boolean">
+        SELECT COUNT(*) > 0 FROM daily.kakao_users WHERE kakao_email = #{kakaoEmail}
+    </select>
+
+    <!-- 사용자 정보 업데이트 -->
+    <update id="updateKakaoUserInfo">
+        UPDATE daily.kakao_users
+        SET kakao_nickname = #{kakaoNickname}, talk_message_consent = #{talkMessageConsent}
+        WHERE kakao_id = #{kakaoId}
+    </update>
+
+    <!-- 모든 사용자 조회 -->
+    <select id="getAllKakaoUsers" resultType="com.dailysnap.summation.model.KakaoUserVO">
+        SELECT * FROM daily.kakao_users
+    </select>
+
+    <!-- 사용자 삭제 -->
+    <delete id="deleteKakaoUser">
+        DELETE FROM daily.kakao_users WHERE kakao_id = #{kakaoId}
+    </delete>
+
+</mapper>
