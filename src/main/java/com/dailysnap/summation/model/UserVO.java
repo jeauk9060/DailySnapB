@@ -1,14 +1,16 @@
 package com.dailysnap.summation.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 public class UserVO {
-	private int userId; // 사용자 ID
-	private String email; // 이메일
-	private boolean privacyConsent; // 개인정보 동의 여부
-	private String consentDate; // 동의 날짜
-	private int subscriptionStatus; // 구독 상태
-	private String signupDate; // 가입 일자
-	private String lastUpdated; // 최근 업데이트 시간
+    private int userId; // DB 컬럼명과 일치
+    private String email;
+    private boolean privacyConsent; // boolean 타입 유지
+    private String consentDate;    // 문자열로 ISO 포맷 전달
+    private int subscriptionStatus;
+    private String signupDate;     // ISO 형식 날짜 문자열
+    private String lastUpdated;    // ISO 형식 날짜 문자열
+	
 }

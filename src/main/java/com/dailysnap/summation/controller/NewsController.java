@@ -29,9 +29,8 @@ public class NewsController {
         } catch (Exception e) {
             e.printStackTrace();
             return "오류 발생: " + e.getMessage();
-        }
+        } 
     }
-
     
  // 수동 뉴스 저장 테스트
     @PostMapping("/fetch")

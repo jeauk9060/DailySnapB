@@ -1,9 +1,9 @@
 package com.dailysnap.summation.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dailysnap.summation.dao.UserDAO;
+import com.dailysnap.summation.dto.UserDTO;
 import com.dailysnap.summation.model.UserVO;
 
 import lombok.RequiredArgsConstructor;
@@ -14,10 +14,10 @@ public class UserService {
 
     private final UserDAO userDAO;
 
-    // 사용자 등록
-    public void registerUser(UserVO user) {
-        userDAO.insertUser(user);
+    public void registerUser(UserDTO userDTO) {
+        userDAO.insertUser(userDTO);
     }
+    
 
     // 이메일로 사용자 조회
     public UserVO getUserByEmail(String email) {

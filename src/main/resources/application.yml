@@ -35,6 +35,8 @@ server:
 mybatis:
   mapper-locations: classpath:mappers/**/*.xml
   type-aliases-package: com.dailysnap.summation.model
+  configuration:
+    map-underscore-to-camel-case: true
 
 logging:
   level:
@@ -49,3 +51,4 @@ openai:
   api:
     url: ${OPENAI_API_URL}
     key: ${OPENAI_API_KEY}
+

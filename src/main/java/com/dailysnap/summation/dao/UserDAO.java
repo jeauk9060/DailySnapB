@@ -3,12 +3,13 @@ package com.dailysnap.summation.dao;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import com.dailysnap.summation.dto.UserDTO;
 import com.dailysnap.summation.model.UserVO;
 
 @Repository
 public interface UserDAO {
     // 사용자 추가
-    void insertUser(UserVO user);
+	void insertUser(UserDTO userDTO);
 
     // 이메일로 사용자 조회
     UserVO getUserByEmail(@Param("email") String email);
