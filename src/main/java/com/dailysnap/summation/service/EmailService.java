@@ -24,7 +24,6 @@ public class EmailService {
         this.mailSender = mailSender;
         this.articleNewsDAO = articleNewsDAO;
     }
-
     // 이메일 전송 메서드 (오늘 날짜 뉴스 조회 및 전송)
     public String sendTodayNewsEmail(String toEmail) {
         try {

@@ -52,3 +52,6 @@ openai:
     url: ${OPENAI_API_URL}
     key: ${OPENAI_API_KEY}
 
+kakao:
+  client-id: ${KAKAO_CLIENT_ID}
+  redirect-uri: ${KAKAO_REDIRECT_URI}

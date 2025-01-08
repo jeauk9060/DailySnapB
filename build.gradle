@@ -29,6 +29,13 @@ dependencies {
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4'
 	implementation 'org.json:json:20210307'
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	
+	//Webflux
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	//thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'org.postgresql:postgresql'
